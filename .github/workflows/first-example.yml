@@ -6,9 +6,11 @@ jobs:
         steps:
         -  name: checkout 
            uses: actions/checkout@v4      
-        -  name: welcome message
-           run: echo "my first github actions workflow"
-        -  name: list files 
-           run: ls 
-        -  name: read file
-           run: cat README.md
+        -  name: list and read files
+           run: | 
+               echo "my first github actions workflow"
+               ls -ltra
+               cat README.md 
+
+        -  name: Generate Ascii artwork
+           run: cowsay -f dragon "Run for cover! i am a dragon" >> dragon.txt
