@@ -21,7 +21,7 @@ jobs:
        - uses: actions/download-artifact@v4
          with: 
           name: dragon-artifact
-          
+
        - name: Test file Exists
          run: grep -i "dragon" dragon.txt
 
@@ -29,5 +29,8 @@ jobs:
       runs-on: ubuntu-lates
       needs: test_job
       steps: 
+        - uses: actions/download-artifact@v4
+          with: 
+            name: dragon-artifact
         - name: Read file 
           run: cat dragon.txt
